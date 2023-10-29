@@ -4,7 +4,7 @@ LiquidLab is a Single-Page Application (SPA) designed to introduce users to a de
 
 ## Project Link
 
-[Contentful React Project](https://contentful-oxmj.onrender.com)
+[LiquidLab React Project](https://liquid-lab.onrender.com)
 
 ## Technologies and Libraries
 
