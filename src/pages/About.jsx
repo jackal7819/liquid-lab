@@ -46,17 +46,15 @@ const About = () => {
 };
 
 const Wrapper = styled.div`
-	padding: 1.5rem;
-    max-width: var(--max-width);
-    text-align: center;
-    margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	text-align: center;
 
 	p {
 		line-height: 2;
 		color: var(--grey-500);
-		margin-top: 1.5rem;
-		margin-bottom: 1.5rem;
-        text-align: start;
+		text-align: start;
 	}
 `;
 
