@@ -1,5 +1,5 @@
 const Cocktail = () => {
-	return <div>Cocktail</div>;
+	return <h1>Cocktail</h1>;
 };
 
 export default Cocktail;
