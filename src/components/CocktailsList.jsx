@@ -1,5 +1,6 @@
 import CocktailCard from './CocktailCard';
 import { WrapperError } from '../pages/SinglePageError';
+import { styled } from 'styled-components';
 
 const CocktailsList = ({ drinks }) => {
 	if (!drinks) {
@@ -11,12 +12,19 @@ const CocktailsList = ({ drinks }) => {
 	}
 
 	return (
-		<WrapperError>
+		<Wrapper>
 			{drinks.map((drink) => (
-				<CocktailCard key={drink.idDrink} {...drink} />
+				<CocktailCard key={drink.idDrink} {...drink} drink={drink} />
 			))}
-		</WrapperError>
+		</Wrapper>
 	);
 };
+
+const Wrapper = styled.section`
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 2rem;
+        
+`;
 
 export default CocktailsList;
