@@ -10,7 +10,7 @@ const SinglePageError = () => {
 	);
 };
 
-const Wrapper = styled.section`
+export const WrapperError = styled.section`
 	h3 {
 		line-height: 1.5;
 		color: var(--grey-500);
