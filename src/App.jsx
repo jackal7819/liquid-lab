@@ -1,4 +1,5 @@
 import Cocktail, { cocktailLoader } from './pages/Cocktail';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import About from './pages/About';
@@ -10,6 +11,10 @@ import SinglePageError from './pages/SinglePageError';
 import { landingLoader } from './pages/Landing';
 import { newsletterAction } from './pages/Newsletter';
 
+const queryClient = new QueryClient({
+	defaultOptions: { queries: { staleTime: 1000 * 60 * 5 } },
+});
+
 const router = createBrowserRouter([
 	{
 		path: '/',
@@ -20,13 +25,13 @@ const router = createBrowserRouter([
 				index: true,
 				element: <Landing />,
 				errorElement: <SinglePageError />,
-				loader: landingLoader,
+				loader: landingLoader(queryClient),
 			},
 			{
 				path: 'cocktail/:id',
 				element: <Cocktail />,
 				errorElement: <SinglePageError />,
-				loader: cocktailLoader,
+				loader: cocktailLoader(queryClient),
 			},
 			{
 				path: 'newsletter',
@@ -39,7 +44,11 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-	return <RouterProvider router={router} />;
+	return (
+		<QueryClientProvider client={queryClient}>
+			<RouterProvider router={router} />
+		</QueryClientProvider>
+	);
 };
 
 export default App;

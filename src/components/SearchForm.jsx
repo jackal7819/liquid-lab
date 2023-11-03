@@ -40,6 +40,7 @@ const Wrapper = styled.div`
 	.btn {
 		border-top-left-radius: 0;
 		border-bottom-left-radius: 0;
+		margin-top: 0;
 	}
 `;
 
