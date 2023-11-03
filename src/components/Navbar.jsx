@@ -23,7 +23,7 @@ const Navbar = () => {
 };
 
 const Wrapper = styled.nav`
-	background: var(--grey-100);
+	background: var(--primary-100);
 	.nav-center {
 		width: var(--view-width);
 		margin: 0 auto;
