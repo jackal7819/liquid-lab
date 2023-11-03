@@ -183,6 +183,13 @@ ul {
 	padding: 2rem 2.5rem;
 	margin: 3rem auto;
 }
+.form h4 {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+.form button {
+	margin-top: 0.5;
+}
 .form-label {
 	display: block;
 	font-size: var(--small-text);
@@ -243,4 +250,8 @@ ul {
 	height: 0.25rem;
 	margin: 0 auto;
 	margin-top: 1rem;
+}
+
+.Toastify__toast {
+	text-transform: capitalize;
 }

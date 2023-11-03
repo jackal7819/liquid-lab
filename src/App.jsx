@@ -8,6 +8,7 @@ import Landing from './pages/Landing';
 import Newsletter from './pages/Newsletter';
 import SinglePageError from './pages/SinglePageError';
 import { landingLoader } from './pages/Landing';
+import { newsletterAction } from './pages/Newsletter';
 
 const router = createBrowserRouter([
 	{
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
 				errorElement: <SinglePageError />,
 				loader: cocktailLoader,
 			},
-			{ path: 'newsletter', element: <Newsletter /> },
+			{
+				path: 'newsletter',
+				element: <Newsletter />,
+				action: newsletterAction,
+			},
 			{ path: 'about', element: <About /> },
 		],
 	},
