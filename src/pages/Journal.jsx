@@ -3,14 +3,14 @@ import { Form, redirect, useNavigation } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-const newsletterUrl = 'https://www.course-api.com/cocktails-newsletter';
+const journalUrl = 'https://www.course-api.com/cocktails-newsletter';
 
-export const newsletterAction = async ({ request }) => {
+export const journalAction = async ({ request }) => {
 	const formData = await request.formData();
 	const data = Object.fromEntries(formData);
 
 	try {
-		const response = await axios.post(newsletterUrl, data);
+		const response = await axios.post(journalUrl, data);
 		toast.success(response.data.msg);
 		return redirect('/');
 	} catch (error) {
@@ -19,13 +19,13 @@ export const newsletterAction = async ({ request }) => {
 	}
 };
 
-const Newsletter = () => {
+const Journal = () => {
 	const navigation = useNavigation();
 	const isSubmitting = navigation.state === 'submitting';
 
 	return (
 		<Form className='form' method='POST'>
-			<h4>our newsletter</h4>
+			<h4>our journal</h4>
 			<div className='form-row'>
 				<label htmlFor='name' className='form-label'>
 					name
@@ -67,10 +67,10 @@ const Newsletter = () => {
 				type='submit'
 				className='btn btn-block'
 				disabled={isSubmitting}>
-				{isSubmitting ? 'submitting...' : 'submit'}
+				{isSubmitting ? 'subscribing...' : 'subscribe'}
 			</button>
 		</Form>
 	);
 };
 
-export default Newsletter;
+export default Journal;

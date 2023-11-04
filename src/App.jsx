@@ -5,11 +5,11 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import About from './pages/About';
 import Error from './pages/Error';
 import HomeLayout from './pages/HomeLayout';
+import Journal from './pages/Journal';
 import Landing from './pages/Landing';
-import Newsletter from './pages/Newsletter';
 import SinglePageError from './pages/SinglePageError';
+import { journalAction } from './pages/Journal';
 import { landingLoader } from './pages/Landing';
-import { newsletterAction } from './pages/Newsletter';
 
 const queryClient = new QueryClient({
 	defaultOptions: { queries: { staleTime: 1000 * 60 * 5 } },
@@ -34,9 +34,9 @@ const router = createBrowserRouter([
 				loader: cocktailLoader(queryClient),
 			},
 			{
-				path: 'newsletter',
-				element: <Newsletter />,
-				action: newsletterAction,
+				path: 'journal',
+				element: <Journal />,
+				action: journalAction,
 			},
 			{ path: 'about', element: <About /> },
 		],

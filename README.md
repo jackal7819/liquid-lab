@@ -20,7 +20,7 @@ LiquidLab is a Single-Page Application (SPA) designed to introduce users to a de
 
 The project's architecture is organized in a structured manner:
 
-- The `src/pages` directory contains components representing different pages of the application, including `Landing`, `About`, `Cocktail`, `Newsletter`, and more.
+- The `src/pages` directory contains components representing different pages of the application, including `Landing`, `About`, `Cocktail`, `Journal`, and more.
 
 - The `src/components` directory hosts reusable components like `Navbar`, `SearchForm`, `CocktailList`, `CocktailCard`, etc., used across multiple pages.
 
@@ -36,7 +36,7 @@ LiquidLab provides the following features:
 
 - **Cocktail Database Integration**: Utilizes TheCocktailDB API for fetching and displaying cocktail recipes.
 
-- **Newsletter Subscription**: Allows users to submit their details for the newsletter.
+- **Journal Subscription**: Allows users to submit their details for the journal.
 
 - **Search**: Enables users to search for specific cocktails.
 
